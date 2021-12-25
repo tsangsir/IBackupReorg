@@ -40,3 +40,16 @@ Depending on the OS and filesystem in use, the actual file path may be too long 
     from Files
     --where flags in (1, 4)
     order by relativePath ;
+
+## Set file metadata
+Besides file path, file metadata like creation and modification timestamp are stored in `Manifest.db`, in plists.
+
+A Java program is used to set metadata.
+
+Pre-requisites:
+- dd-plist 1.23 or above
+- sqlite-jdbc 3.34.0 or above
+
+See pom.xml for detail.
+
+    # java org.tsangsir.ibackupreorg.ITunesBackupReorg <itunesBackupLocation>
